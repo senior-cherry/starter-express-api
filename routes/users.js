@@ -2,7 +2,7 @@ const {User} = require('../models/user');
 const express = require('express');
 const bcrypt = require('bcryptjs');
 const router = express.Router();
-const {expressjwt: jwt} = require("express-jwt");
+const jwt = require("jsonwebtoken");
 
 router.get(`/`, async (req, res) => {
     const userList = await User.find().select('-passwordHash');

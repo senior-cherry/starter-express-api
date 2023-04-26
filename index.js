@@ -12,7 +12,7 @@ const usersRoutes = require("./routes/users");
 const ordersRoutes = require("./routes/orders");
 
 const API_URL = "/api/v1"
-const CONNECTION_STRING = "mongodb+srv://Alexander:t896L09EEeagE9Ui@cluster0.bskgpoz.mongodb.net/eshop-database?retryWrites=true&w=majority"
+const CONNECTION_STRING = "mongodb+srv://shop-user:admin3022RN@cluster0.bskgpoz.mongodb.net/eshop-database?retryWrites=true&w=majority"
 
 //Database
 mongoose.connect(CONNECTION_STRING, {

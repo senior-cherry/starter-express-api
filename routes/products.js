@@ -30,7 +30,7 @@ const multer = require('multer');
 //     }
 // });
 
-const uploadOptions = multer({storage: storage});
+// const uploadOptions = multer({storage: storage});
 
 router.get(`/`, async (req, res) => {
     let filter = [];

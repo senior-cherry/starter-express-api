@@ -33,12 +33,12 @@ const storage = multer.diskStorage({
 const uploadOptions = multer({storage: storage});
 
 router.get(`/`, async (req, res) => {
-    let filter = [];
+    let filter = {};
     if (req.query.categories){
-        filter = req.query.categories.split(',');
+        filter = {category: req.query.categories.split(',')};
     }
 
-    const productList = await Product.find({category: filter}).populate('category');
+    const productList = await Product.find(filter).populate('category');
 
     if (!productList){
         res.status(500).json({success: false})

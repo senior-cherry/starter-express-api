@@ -28,7 +28,7 @@
 //
 // module.exports = authJWT;
 
-const {jwt} = require("jsonwebtoken");
+const jwt = require("jsonwebtoken");
 
 const authJWT = () => {
     const secret = process.env.secret;

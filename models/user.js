@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-require("dotenv").config();
+require("dotenv/config");
 
 const userSchema = new mongoose.Schema({
     name: {
@@ -50,7 +50,7 @@ userSchema.virtual('id').get(() => {
 });
 
 userSchema.set('toJSON', {
-    virtual: true,
+    virtuals: true,
 });
 
 exports.User = mongoose.model('User', userSchema);

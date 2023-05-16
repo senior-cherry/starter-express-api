@@ -46,7 +46,7 @@ const userSchema = new mongoose.Schema({
 });
 
 userSchema.virtual('id').get(() => {
-     this._id.toHexString();
+     this._id.toString(16);
 });
 
 userSchema.set('toJSON', {

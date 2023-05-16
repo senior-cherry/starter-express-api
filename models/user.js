@@ -50,7 +50,7 @@ userSchema.virtual('id').get(() => {
 });
 
 userSchema.set('toJSON', {
-    virtuals: true,
+    virtual: true,
 });
 
 exports.User = mongoose.model('User', userSchema);

@@ -26,7 +26,7 @@ mongoose.connect(CONNECTION_STRING, {
         app.options('*', cors())
 
 //middleware
-        app.use(express.json());
+        app.use(express.json({limit: '50mb'}));
         app.use(morgan('tiny'));
         app.use(authJwt());
         app.use('/public/uploads', express.static(__dirname + '/public/uploads'));

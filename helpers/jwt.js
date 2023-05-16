@@ -1,8 +1,8 @@
-const expressjwt = require("express-jwt");
+const {expressjwt} = require("express-jwt");
 
 authJWT = () => {
     const secret = process.env.secret;
-    return expressjwt.expressjwt({
+    return expressjwt({
         secret,
         algorithms: ['HS256'],
         isRevoked: isRevoked

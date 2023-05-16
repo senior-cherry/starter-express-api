@@ -122,7 +122,7 @@ router.post('/login', async (req, res) => {
         res.status(400).send('Password is wrong!');
     }
 
-    //res.status(200).send(user);
+    res.status(200).send(user);
 });
 
 router.post('/register', async (req,res)=>{

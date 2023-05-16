@@ -28,7 +28,8 @@
 //
 // module.exports = authJWT;
 
-const jwt = require("jsonwebtoken");
+//const expressJwt = require("express-jwt");
+const {expressjwt} = require("express-jwt");
 
 const authJWT = () => {
     const secret = process.env.secret;
@@ -40,16 +41,16 @@ const authJWT = () => {
         done();
     };
 
-    return jwt({
+        return expressjwt({
         secret,
         algorithms: ['HS256'],
         isRevoked: isRevoked
     }).unless({
         path: [
-            { url: /\/public\/uploads(.*)/, methods: ['GET', 'OPTIONS'] },
-            { url: /\/api\/v1\/products(.*)/, methods: ['GET', 'OPTIONS'] },
-            { url: /\/api\/v1\/categories(.*)/, methods: ['GET', 'OPTIONS'] },
-            { url: /\/api\/v1\/orders(.*)/, methods: ['GET', 'OPTIONS', 'POST'] },
+            {url: /\/public\/uploads(.*)/, methods: ['GET', 'OPTIONS']},
+            {url: /\/api\/v1\/products(.*)/, methods: ['GET', 'OPTIONS']},
+            {url: /\/api\/v1\/categories(.*)/, methods: ['GET', 'OPTIONS']},
+            {url: /\/api\/v1\/orders(.*)/, methods: ['GET', 'OPTIONS', 'POST']},
             '/api/v1/users/login',
             '/api/v1/users/register'
         ]

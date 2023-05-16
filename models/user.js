@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-require("dotenv/config");
 
 const userSchema = new mongoose.Schema({
     name: {
@@ -45,9 +44,9 @@ const userSchema = new mongoose.Schema({
 
 });
 
-userSchema.virtual('id').get(() => {
-     this._id.toString(16);
-});
+// userSchema.virtual('id').get(() => {
+//      this._id.toString(16);
+// });
 
 userSchema.set('toJSON', {
     virtuals: true,
